@@ -24,4 +24,21 @@ public class PersonController: ControllerBase {
         pessoa.contratos.Add(contrato);
         return pessoa;
     }
+
+    [HttpPost]
+    public Person PostPerson(Person pessoa) {
+        return pessoa;
+    }
+
+    [HttpPut("{id}")]
+    public string UpdatePerson([FromRoute]int id, [FromBody]Person pessoa) {
+        Console.WriteLine(id);
+        Console.WriteLine(pessoa);
+        return "Dados do id " + id + " atualizados";
+    }
+
+    [HttpDelete("{id}")]
+    public string DeletePersonById(int id) {
+        return "deletando pessoa de id " + id;
+    }
 }
