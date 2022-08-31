@@ -1,15 +1,19 @@
+//variavel que vai criar uma web aplicação(criar builder com qualquer argumento)
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// adiciona ao builder os controllers
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// adiciona ao builder os endpoits com APIS
 builder.Services.AddEndpointsApiExplorer();
+
+// adiciona ao builder o swagger
 builder.Services.AddSwaggerGen();
 
+// para criar a aplicação de fato
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// verificar se está no ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
