@@ -14,7 +14,7 @@ public class Person{
         this.Id = 0;
     }
 
-    public Person(string Nome, int Idade, string Cpf){
+    public Person(string Nome, int Idade, string Cpf, int id){
         this.Nome = Nome;
         this.Idade = Idade;
         this.Cpf = Cpf;
