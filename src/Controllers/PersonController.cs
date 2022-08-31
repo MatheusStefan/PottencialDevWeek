@@ -26,7 +26,7 @@ public class PersonController: ControllerBase {
     }
 
     [HttpPost]
-    public Person PostPerson(Person pessoa) {
+    public Person PostPerson([FromBody]Person pessoa) {
         return pessoa;
     }
 
@@ -38,7 +38,7 @@ public class PersonController: ControllerBase {
     }
 
     [HttpDelete("{id}")]
-    public string DeletePersonById(int id) {
+    public string DeletePersonById([FromRoute]int id) {
         return "deletando pessoa de id " + id;
     }
 }

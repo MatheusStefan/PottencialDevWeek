@@ -11,7 +11,7 @@ public class Person{
         this.Idade = 0;
         this.contratos = new List<Contract>();
         this.Ativado = true;
-
+        this.Id = 0;
     }
 
     public Person(string Nome, int Idade, string Cpf){
@@ -20,9 +20,12 @@ public class Person{
         this.Cpf = Cpf;
         this.contratos = new List<Contract>();
         this.Ativado = true;
+        this.Id = 0;
+
     }
 
-    // Get & Set
+    // Get & Set - Propriedades
+    public int Id { get; set; }
     public string Nome { get; set; }
 
     public int Idade { get; set;}
