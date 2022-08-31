@@ -1,27 +1,33 @@
+using System.Collections.Generic;
+
 namespace src.Models;
 
-public class Person
-{
+public class Person{
 
     //construtor
     public Person()
     {
-        this.nome = "";
-        this.idade = 0;
+        this.Nome = "";
+        this.Idade = 0;
+        this.contratos = new List<Contract>();
     }
 
-    public Person(string nome, int idade, string cpf){
-        this.nome = nome;
-        this.idade = idade;
-        this.cpf = cpf;
+    public Person(string Nome, int Idade, string Cpf){
+        this.Nome = Nome;
+        this.Idade = Idade;
+        this.Cpf = Cpf;
+        this.contratos = new List<Contract>();
+
     }
 
     // Get & Set
-    public string nome { get; set; }
+    public string Nome { get; set; }
 
-    public int idade { get; set;}
+    public int Idade { get; set;}
 
-    public string? cpf { get; set; }
+    public string? Cpf { get; set; }
 
-    public bool ativa { get; set; }
+    public bool Ativado { get; set; }
+
+    public List<Contract> contratos { get; set;}
 }

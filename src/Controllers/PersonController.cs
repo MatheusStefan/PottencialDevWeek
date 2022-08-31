@@ -18,6 +18,10 @@ public class PersonController: ControllerBase {
     [HttpGet]
     public Person GetPerson(){
         Person pessoa = new Person("Matheus", 24, "43430428878");
+        
+        //criação e instanciação de um contrato 
+        Contract contrato = new Contract("a1b2c3", 20.0);
+        pessoa.contratos.Add(contrato);
         return pessoa;
     }
 }
