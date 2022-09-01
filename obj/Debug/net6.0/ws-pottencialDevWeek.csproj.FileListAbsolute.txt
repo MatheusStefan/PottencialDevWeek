@@ -25,3 +25,17 @@ C:\Workspaces\ws-pottencialDevWeek\obj\Debug\net6.0\ws-pottencialDevWeek.dll
 C:\Workspaces\ws-pottencialDevWeek\obj\Debug\net6.0\ref\ws-pottencialDevWeek.dll
 C:\Workspaces\ws-pottencialDevWeek\obj\Debug\net6.0\ws-pottencialDevWeek.pdb
 C:\Workspaces\ws-pottencialDevWeek\obj\Debug\net6.0\ws-pottencialDevWeek.genruntimeconfig.cache
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Humanizer.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Workspaces\ws-pottencialDevWeek\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

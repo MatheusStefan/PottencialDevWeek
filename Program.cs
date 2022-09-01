@@ -1,5 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using src.Persistence;
+
 //variavel que vai criar uma web aplicação(criar builder com qualquer argumento)
 var builder = WebApplication.CreateBuilder(args);
+
+//adiciona ao builder a relação para o banco de dados
+builder.Services
+    .AddDbContext<DatabaseContext>((options => options.UseInMemoryDatabase("dbContracts")));
+
+builder.Services.AddScoped<DatabaseContext, DatabaseContext>();
 
 // adiciona ao builder os controllers
 builder.Services.AddControllers();

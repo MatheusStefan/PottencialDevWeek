@@ -1,6 +1,7 @@
 //declarar que vai usar o ASP NET
 using Microsoft.AspNetCore.Mvc;
 using src.Models;
+using src.Persistence;
 
 //estrutura de pastas virtual
 namespace src.Controllers;
@@ -14,19 +15,29 @@ namespace src.Controllers;
 //os dois pontos significa herança de uma classe                        
 public class PersonController: ControllerBase {
 
+    //propriedade para que essa classe encontre o banco de dados e faça chamadas
+    private DatabaseContext _repository { get; set; }
+
+    public PersonController(DatabaseContext repository){
+        this._repository = repository;
+    }
+
 //criação de metodo get que através da rota "/person", retorna uma pessoa
     [HttpGet]
-    public Person GetPerson(){
-        Person pessoa = new Person("Matheus", 24, "12345678901", 1);
+    public List<Person> GetPerson(){
+        //Person pessoa = new Person("Matheus", 24, "12345678901", 1);
         
         //criação e instanciação de um contrato 
-        Contract contrato = new Contract("a1b2c3", 20.0);
-        pessoa.contratos.Add(contrato);
-        return pessoa;
+        //Contract contrato = new Contract("a1b2c3", 20.0);
+        //pessoa.contratos.Add(contrato);
+
+        return _repository.Persons.ToList();;
     }
 //criação de metodo post
     [HttpPost]
     public Person PostPerson([FromBody]Person pessoa) {
+        _repository.Persons.Add(pessoa);
+        _repository.SaveChanges();
         return pessoa;
     }
 

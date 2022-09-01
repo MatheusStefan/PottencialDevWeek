@@ -19,7 +19,7 @@ public class DatabaseContext: DbContext{
        //construção de entidade Pessoa com as seguintes instruções: 
         builder.Entity<Person>(e =>{
             
-            e.HasKey( e => e.Id); //uma pessoa tem uma chave
+            e.HasKey( e => e.Id); //uma pessoa tem uma chave. faz autoencremento
             e
             .HasMany(e => e.contratos) //uma pessoa tem muitos contratos.
             .WithOne()                  //pra cada um
