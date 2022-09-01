@@ -25,13 +25,7 @@ public class PersonController: ControllerBase {
 //criação de metodo get que através da rota "/person", retorna uma pessoa
     [HttpGet]
     public List<Person> GetPerson(){
-        //Person pessoa = new Person("Matheus", 24, "12345678901", 1);
-        
-        //criação e instanciação de um contrato 
-        //Contract contrato = new Contract("a1b2c3", 20.0);
-        //pessoa.contratos.Add(contrato);
-
-        return _repository.Persons.ToList();;
+        return _repository.Persons .ToList();
     }
 //criação de metodo post
     [HttpPost]
@@ -44,9 +38,9 @@ public class PersonController: ControllerBase {
 //criação de metodo put
     [HttpPut("{id}")]
     public string UpdatePerson([FromRoute]int id, [FromBody]Person pessoa) {
-        Console.WriteLine(id);
-        Console.WriteLine(pessoa);
-        return "Dados do id " + id + " atualizados";
+        _repository.Persons.Update(pessoa);
+        _repository.SaveChanges();
+        return "Dados do id " + id + "atualizados";
     }
 
 //criação de metodo delete
