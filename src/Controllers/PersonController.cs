@@ -14,7 +14,7 @@ namespace src.Controllers;
 //os dois pontos significa herança de uma classe                        
 public class PersonController: ControllerBase {
 
-//criação de metodo get que através da rota "/person", retorna "ola mundo"
+//criação de metodo get que através da rota "/person", retorna uma pessoa
     [HttpGet]
     public Person GetPerson(){
         Person pessoa = new Person("Matheus", 24, "12345678901", 1);
