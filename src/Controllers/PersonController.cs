@@ -1,4 +1,5 @@
 //declarar que vai usar o ASP NET
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using src.Models;
 using src.Persistence;
@@ -24,8 +25,13 @@ public class PersonController: ControllerBase {
 
 //criação de metodo get que através da rota "/person", retorna uma pessoa
     [HttpGet]
-    public List<Person> GetPerson(){
-        return _repository.Persons .ToList();
+    public ActionResult<List<Person>> GetPerson(){
+        
+        var result = _repository.Persons.Include(p => p.contratos).ToList();
+        if(!result.Any()) {
+            return NoContent();
+        } 
+        return Ok(result);
     }
 //criação de metodo post
     [HttpPost]
@@ -45,8 +51,20 @@ public class PersonController: ControllerBase {
 
 //criação de metodo delete
     [HttpDelete("{id}")]
-    public string DeletePersonById([FromRoute]int id) {
-        Console.WriteLine(id);
-        return "deletando pessoa de id " + id;
+    public ActionResult<Object> DeletePersonById([FromRoute]int id) {
+        var result = _repository.Persons.SingleOrDefault(e => e.Id == id);
+
+        if(result is null) {
+            return BadRequest(new {
+                msg = "Solicitação inválida.",
+                status = 400
+            });
+        }
+        _repository.Persons.Remove(result);
+        _repository.SaveChanges();
+        return Ok(new {
+            msg = "deletando pessoa de Id " + id,
+            status = 200
+        });
     }
 }
